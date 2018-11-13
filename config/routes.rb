@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   resources :hashtags
   resources :images
   resources :comments
-  resources :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :users, only: [:new, :create, :index, :show, :edit, :update]
+  resources :sessions, only: [:new, :create]
+  delete "/sessions", to: "sessions#destroy", as: "session"
+  resources :comments, only: [:index, :destroy]
+
 end

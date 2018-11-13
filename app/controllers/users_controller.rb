@@ -17,7 +17,7 @@ class UsersController < ApplicationController
       redirect_to @user
     else
       render :edit
-    end  
+    end
   end
 
   def new
@@ -33,8 +33,13 @@ class UsersController < ApplicationController
     end
   end
 
-
+  def authenticate(password)
+    BCrypt::Password.new(@user.password_digest) == password
   end
+
+
+
+  
 
   private
 
