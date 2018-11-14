@@ -1,5 +1,5 @@
 class ImagesController < ApplicationController
-
+before_action :current_user, only:[:create, :edit]
 
  def index
      @users = User.all
@@ -11,25 +11,27 @@ class ImagesController < ApplicationController
  end
 
  def new
-     @user = User.find_by(params[:user_id])
      @image = Image.new
-
  end
 
- def create
+  def create
 
-     @image = Image.create(image_params)
-
+    current_user.images.create(image_params)
+     # @image = Image.create(image_params)
      redirect_to @image
- end
+   end
 
  def edit
+   @image = Image.find(params[:id])
+   if !authorized?(@image.user)
+     redirect_to new_session_path()
+  end
  end
 
  private
 
  def image_params
-     params.require(:image).permit(:user_id, :title, :img_url, :hashtag_id)
+     params.require(:image).permit(:title, :img_url, :hashtag_id)
  end
 
 end
