@@ -1,17 +1,17 @@
 class ImagesController < ApplicationController
-  class ImagesController < ApplicationController
+
 
  def index
-     @user = User.find(params[:user_id])
-     @images = @image.images
+     @user = User.find_by(params[:user_id])
+
  end
 
  def show
-     @image = Image.find(params[:id])
+     @image = Image.find_by(params[:id])
  end
 
  def new
-     @user = User.find(params[:user_id])
+     @user = User.find_by(params[:user_id])
      @image = Image.new
 
  end
