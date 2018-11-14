@@ -1,0 +1,40 @@
+<h1>Main Page</h1>
+<% if current_user %>
+  Logged in as <%= current_user.email %>.
+<% else %>
+  <%= link_to "Sign Up", new_user_path %> or
+  <%= link_to "Log In", new_session_path %>
+<% end %>
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body  {
+  background-image: url('https://media.giphy.com/media/t6conLiC13yyaqgijR/giphy.gif');
+  background-size: cover;
+}
+
+</style>
+</head>
+<body>
+
+<h1>The background-image Property</h1>
+
+<p>Hello World!</p>
+
+
+
+<%= form_tag log_out_path, method: "delete" do%>
+<%= submit_tag 'Log Out' %>
+<% end %>
+
+
+
+
+</body>
+
+</html>

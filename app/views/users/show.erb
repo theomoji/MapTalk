@@ -1,1 +1,6 @@
 <%= @user.name %>
+<br>
+<% @user.images.each do |image|%>
+<%= image.title %>
+<%= image_tag "#{image.img_url}", style: 'height:20%;width:20;'  %>
+<%end %>

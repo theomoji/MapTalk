@@ -3,6 +3,9 @@ class SessionsController < ApplicationController
   def new
   end
 
+  def image
+  end
+
   def create
     @user = User.find_by(username: params[:username])
     if @user && @user.authenticate(params[:password])
@@ -17,4 +20,7 @@ class SessionsController < ApplicationController
   def destroy
     log_out
     redirect_to images_path
+    # new_session_path
+    # images_path
+  end
 end

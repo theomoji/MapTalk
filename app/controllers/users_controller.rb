@@ -39,7 +39,7 @@ class UsersController < ApplicationController
 
 
 
-  
+
 
   private
 

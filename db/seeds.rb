@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Hashtag.create(name:"#awesome")
+Hashtag.create(name:"#nice")
+Hashtag.create(name:"#bad")
+Hashtag.create(name:"#kevywevy")
+Hashtag.create(name:"#kencool")

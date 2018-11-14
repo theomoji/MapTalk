@@ -1,9 +1,9 @@
 class ImagesController < ApplicationController
-  class ImagesController < ApplicationController
+
 
  def index
-     @user = User.find(params[:user_id])
-     @images = @image.images
+     @users = User.all
+
  end
 
  def show
@@ -11,15 +11,16 @@ class ImagesController < ApplicationController
  end
 
  def new
-     @user = User.find(params[:user_id])
+     @user = User.find_by(params[:user_id])
      @image = Image.new
 
  end
 
  def create
+
      @image = Image.create(image_params)
-     @image.save
-     redirect_to user_image_path(:user_id, @image)
+
+     redirect_to @image
  end
 
  def edit
@@ -28,7 +29,7 @@ class ImagesController < ApplicationController
  private
 
  def image_params
-     params.require(:image).permit(:user_id, :title, :img_url)
+     params.require(:image).permit(:user_id, :title, :img_url, :hashtag_id)
  end
 
 end

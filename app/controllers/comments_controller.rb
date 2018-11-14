@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  class CommentsController < ApplicationController
+
  def index
      @user = User.find(params[:user_id])
      @image = Image.find(params[:image_id])

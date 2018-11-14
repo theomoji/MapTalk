@@ -1,5 +1,5 @@
 class HashtagsController < ApplicationController
-  class HashtagsController < ApplicationController
+
 
  def index
      @hashtags = Hashtag.all
@@ -7,6 +7,7 @@ class HashtagsController < ApplicationController
 
  def show
      @hashtag = Hashtag.find(params[:id])
+     @images = Image.all
  end
 
  def new
