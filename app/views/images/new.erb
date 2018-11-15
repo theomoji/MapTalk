@@ -4,12 +4,10 @@
    <%=f.label :title %>
    <%=f.text_field :title %>
 </li>
-
 <li>
    <%=f.label :img_url %>
    <%=f.text_area :img_url %>
 
-  <%= f.collection_select :hash_tag, Hash_tag.all, :id, :name %>
 </li>
    <%=f.submit "Submit"%>
 </ul>
