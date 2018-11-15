@@ -1,12 +1,20 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+User.create(name:"Cory Pavitt",email:"corypavitt@gmail.com", username:"corypavitt",password:"123435")
+Image.create(user_id: 1, title:"A pic",img_url: "https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg?auto=compress&cs=tinysrgb&dpr=1&h=20")
+
 Hashtag.create(name:"#awesome")
-Hashtag.create(name:"#nice")
-Hashtag.create(name:"#bad")
-Hashtag.create(name:"#kevywevy")
-Hashtag.create(name:"#kencool")
+Hashtag.create(name:"#stinky")
+Hashtag.create(name:"#amazing")
+Hashtag.create(name:"#tired")
+Hashtag.create(name:"#brooklyn")
+Hashtag.create(name:"#dog pic")
+Hashtag.create(name:"#fun")
+Hashtag.create(name:"#family fun")
+Hashtag.create(name:"#hashtag")
+Hashtag.create(name:"#punk")
+Hashtag.create(name:"#Kenny")
+Hashtag.create(name:"#NYC")
+Hashtag.create(name:"#Sunny day")
+Hashtag.create(name:"#Cloudy day")
+Hashtag.create(name:"#awesome")
+
+Imagetag.create(image_id:1,hashtag_id:1)

@@ -8,8 +8,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <style>
-body  {
+body {
   background-image: url('https://media.giphy.com/media/t6conLiC13yyaqgijR/giphy.gif');
   background-size: cover;
 }
@@ -27,7 +28,8 @@ body  {
 
 <p>Instagram Classic</p>
 <%= form_tag log_out_path, method: "delete" do%>
-<%= submit_tag 'Log Out' %>
+<%= submit_tag 'Log Out' %><br>
+<button type="button" name="button"><%= link_to "Create Image", new_image_path %></button>
 <% end %>
 </body>
 

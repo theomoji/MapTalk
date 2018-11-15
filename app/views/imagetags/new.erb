@@ -1,0 +1,7 @@
+<%= form_for @imagetag do |f| %>
+<%= f.label :Image %>
+<%= f.collection_select :image, Image.all, :id, :title  %>
+<%= f.label :Hashtag %>
+<%= f.collection_select :hashtag, Hashtag.all, :id, :name  %>
+<%= f.submit %>
+<% end %>

@@ -5,7 +5,7 @@ before_action :current_user, only:[:create, :edit]
 
      @users = User.all
      @images = Image.all
-    
+
  end
 
  def show
@@ -19,15 +19,24 @@ before_action :current_user, only:[:create, :edit]
   def create
 
     current_user.images.create(image_params)
-     # @image = Image.create(image_params)
-     redirect_to @image
+     image = Image.create(image_params)
+     redirect_to image
    end
 
  def edit
    @image = Image.find(params[:id])
-   if !authorized?(@image.user)
-     redirect_to new_session_path()
-  end
+   # if !authorized?(@image.user)
+   #   redirect_to new_session_path()
+  # end
+ end
+
+ def update
+   @image = Image.find(params[:id])
+   if @image.update(image_params)
+     redirect_to images_path
+   else
+     render :edit
+   end
  end
 
  private
