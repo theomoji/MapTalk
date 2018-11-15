@@ -18,6 +18,13 @@ body  {
 </head>
 <body>
 <h1>Images Property</h1>
+  <% @images.each do |image|  %>
+  Title: <%= image.title %><br>
+  <img src=<%=image.img_url%>>
+  <% end %>
+
+
+
 <p>Instagram Classic</p>
 <%= form_tag log_out_path, method: "delete" do%>
 <%= submit_tag 'Log Out' %>

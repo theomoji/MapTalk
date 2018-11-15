@@ -2,8 +2,10 @@ class ImagesController < ApplicationController
 before_action :current_user, only:[:create, :edit]
 
  def index
-     @users = User.all
 
+     @users = User.all
+     @images = Image.all
+    
  end
 
  def show
