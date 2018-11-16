@@ -14,7 +14,7 @@ end
 
 def create
 @imagetag = Imagetag.create(imagetag_params)
-redirect_to @imagetag
+redirect_to users_path
 end
 
 private

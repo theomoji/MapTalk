@@ -1,3 +1,11 @@
+<style>
+body {
+  background-image: url('https://media.giphy.com/media/t6conLiC13yyaqgijR/giphy.gif');
+  background-size: cover;
+}
+
+</style>
+
 <%= form_for @imagetag do |f| %>
 <%= f.label :Image %>
 <%= f.collection_select :image, Image.all, :id, :title  %>
